@@ -24,7 +24,7 @@ namespace MittEgnaProjekt.ViewModels
         DateTime bookingDate;
         [ObservableProperty]
         string customerName;
-
+         
         public BookedBoatsViewModel()
         {
             bookingDate = DateTime.Today;
