@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MittEgnaProjekt.Views.LoginPage"
+             Title="Inloggning">
+    <VerticalStackLayout
+        Spacing="25"
+        Padding="30,0"
+        VerticalOptions="Center">
+        <VerticalStackLayout Spacing="5">
+            <Label Text="Välkommen!"
+                       FontSize="28"
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center"/>
+
+            <Label Text="Logga in på ditt konto"
+                       FontSize="18"
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+
+            </Frame>
+            <Frame Padding="0" Margin="-20,0,0,0" HasShadow="True" HorizontalOptions="FillAndExpand">
+                <Entry x:Name="userNameEntry" Placeholder="Användarnamn" Keyboard="Email"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+
+            </Frame>
+            <Frame Padding="0" Margin="-20,0,0,0" HasShadow="True" HorizontalOptions="FillAndExpand">
+                <Entry x:Name="passWordEntry" Placeholder="Lösenord" IsPassword="True" Keyboard="Email"/>
+            </Frame>
+        </StackLayout>
+
+        <Button Text="Logga In" Clicked="OnLoginButtonClicked" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" BackgroundColor="LightBlue" />
+
+        <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center">
+            <Label Text="Inget konto än?" TextColor="Gray"/>
+            <Button Text="Skapa konto" Clicked="OnCreateAccountClicked" TextColor="LightBlue"/>
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

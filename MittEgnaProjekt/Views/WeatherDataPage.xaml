@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MittEgnaProjekt.Views.WeatherDataPage"
+             Title="Väder info">
+    <VerticalStackLayout>
+        <Label
+            Text="Nuvarande väderdata för sjön:"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+        <Label 
+            Text="{Binding temp, StringFormat='Temperaturen: {0} ºC'}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Text="{Binding wind_speed, StringFormat='Vindhastighet: {0} ms'}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Text="{Binding feels_like, StringFormat='Känns som: {0} ºC'}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

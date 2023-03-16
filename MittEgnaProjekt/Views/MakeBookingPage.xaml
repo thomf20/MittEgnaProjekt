@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MittEgnaProjekt.Views.MakeBookingPage"
+             xmlns:viewmodel="clr-namespace:MittEgnaProjekt.ViewModels"
+             x:DataType="viewmodel:BookedBoatsViewModel"
+             Title="Bokningssidan">
+    <StackLayout>
+        <DatePicker Date="{Binding BookingDate, Mode=TwoWay}" Format="dd/MM/yyyy" TextColor="Green" />
+        <Entry Text="{Binding CustomerName}" Placeholder="Namn" />
+        <Entry Text="{Binding BoatName}" Placeholder="Välj mellan Båt 1 eller Båt 2" />
+        <Button Text="Boka" Command="{Binding AddBookingCommand}" />
+        <ListView ItemsSource="{Binding Boats}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding BookingDate, StringFormat='{0:dd/MM/yyyy}'}" Padding="10" />
+                            <Label Text="{Binding BoatName}" Padding="10" />
+                            <Label Text="{Binding CustomerName}" Padding="10" />
+                            <Button Grid.Column="2" Text="Radera"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:BookedBoatsViewModel}}, Path=DeleteBoatCommand}" CommandParameter="{Binding .}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
